@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import {gradeRouter} from './routes/gradeRouter.js';
+import { gradeRouter } from './routes/gradeRouter.js';
 
 import { db } from './models/index.js';
 
@@ -11,9 +11,9 @@ import { db } from './models/index.js';
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('Conectado ao mongobd')
+    console.log('Conectado ao mongobd');
   } catch (error) {
-    console.log('Erro ao conectar com com o mongo ' + error.message)
+    console.log('Erro ao conectar com com o mongo ' + error.message);
     process.exit();
   }
 })();
@@ -30,7 +30,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.send('API em execucao');
+  res.send('⨁ API em execucao');
 });
 
 app.use(gradeRouter);
